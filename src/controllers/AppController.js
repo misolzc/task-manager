@@ -1,5 +1,6 @@
 import LocalStorage from "../services/LocalStorageService";
 import State from "../store/State";
+import TaskFormModel from "../models/TaskFormModel";
 
 /**
  * Main controller class for the application.
@@ -12,6 +13,7 @@ export default class AppController {
   constructor() {
     this.localStorage = new LocalStorage();
     this.state = new State(this.localStorage);
+    this.taskFormModel = new TaskFormModel(this.state);
   }
 
   /**
@@ -19,5 +21,7 @@ export default class AppController {
    * This method should be called to start the app.
    * @returns {void}
    */
-  init() {}
+  init() {
+    this.taskFormModel.addTask();
+  }
 }
