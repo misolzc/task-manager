@@ -3,8 +3,7 @@ import State from "../store/State";
 import TaskFormModel from "../models/TaskFormModel";
 
 /**
- * Main controller class for the application.
- * Responsible for initializing and managing core application flow.
+ * Main controller for initializing and managing application components.
  */
 export default class AppController {
   /**
@@ -17,8 +16,7 @@ export default class AppController {
   }
 
   /**
-   * Initializes the application.
-   * This method should be called to start the app.
+   * Starts the application.
    * @returns {void}
    */
   init() {

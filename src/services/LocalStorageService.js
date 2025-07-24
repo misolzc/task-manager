@@ -1,18 +1,16 @@
 /**
- * Class to handle saving and loading tasks from localStorage.
+ * Handles saving and loading tasks from localStorage.
  */
 export default class LocalStorage {
   /**
-   * Create a localStorage instance.
-   * @param {string} key - localStorage key to use (default: 'tasks').
+   * @param {string} [key='tasks'] - The key under which tasks are stored.
    */
   constructor(key = "tasks") {
     this.key = key;
   }
 
   /**
-   * Load tasks array from localStorage.
-   * @returns {Array} Array - Array of task, or empty array if none found or error occurs.
+   * @returns {Array} Array of tasks, or an empty array if none are found or an error occurs.
    */
   loadTasks() {
     try {
@@ -25,9 +23,8 @@ export default class LocalStorage {
   }
 
   /**
-   * Save tasks array to localStorage.
-   * @param {Array} tasks - Array of tasks to save.
-   * @throws {Error} Throws error if tasks is not an array.
+   * @param {Array} tasks - The tasks to save.
+   * @throws {Error} If the input is not an array.
    */
   saveTasks(tasks) {
     if (!Array.isArray(tasks)) {

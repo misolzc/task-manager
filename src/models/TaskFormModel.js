@@ -1,10 +1,9 @@
 /**
- * Model class responsible for handling task form logic and adding tasks.
+ * Handles logic related to the task form and task creation.
  */
 export default class TaskFormModel {
   /**
-   * Initializes the task form model with a given state.
-   * @param {State} state - The application state instance for managing tasks.
+   * @param {State} state - Application state instance for managing tasks.
    */
   constructor(state) {
     this.taskInput = document.querySelector(".task-input");
@@ -13,9 +12,7 @@ export default class TaskFormModel {
   }
 
   /**
-   * Attaches an event listener to handle adding a new task from the form.
-   * Prevents default form submission and delegates task creation to the state.
-   * @returns {void}
+   * Adds event listener for creating a new task via the form.
    */
   addTask() {
     this.taskAddBtn.addEventListener("click", (e) => {

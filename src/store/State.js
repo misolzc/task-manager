@@ -1,10 +1,9 @@
 /**
- * Class to manage and manipulate app state data.
+ * Manages and manipulates application state data.
  */
 export default class State {
   /**
-   *Create a state instance.
-   * @param {LocalStorage} localStorage - An instance of localStorage for loading and saving tasks.
+   * @param {LocalStorage} localStorage - Instance to handle persistence.
    */
   constructor(localStorage) {
     this.localStorage = localStorage;
@@ -12,8 +11,8 @@ export default class State {
   }
 
   /**
-   * Create a new task and add it to the task list.
-   * @param {string} taskText - The text description of the task to create.
+   * @param {string} taskText - Text description of the task.
+   * @returns {void}
    */
   createTasks(taskText) {
     const newTask = {
@@ -27,8 +26,8 @@ export default class State {
   }
 
   /**
-   * Delete a task from the task list.
-   * @param {string} taskId - The id of the task to delete.
+   * @param {string} taskId - ID of the task to delete.
+   * @returns {void}
    */
   deleteTask(taskId) {
     this.tasks = this.tasks.filter((task) => task.id !== taskId);
@@ -36,9 +35,8 @@ export default class State {
   }
 
   /**
-   * Toggle the completed status of a task.
-   * @param {string} taskId - The id of the task to toggle.
-   * @returns {Array}
+   * @param {string} taskId - ID of the task to toggle.
+   * @returns {void}
    */
   toggleCompleted(taskId) {
     const task = this.tasks.find((task) => task.id === taskId);
@@ -49,9 +47,8 @@ export default class State {
   }
 
   /**
-   * Filter tasks by status.
-   * @param {string} status - The status to filter tasks by ('all', 'active', or 'competed').
-   * @returns {Array} Filtered array of tasks based on the given status.
+   * @param {string} status - Status to filter by ('all', 'active', or 'completed').
+   * @returns {Array} Filtered array of tasks.
    */
   filterTasks(status) {
     if (status === "active")
