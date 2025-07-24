@@ -60,3 +60,42 @@
   flex-direction: column;
   gap: $spacing-sm;
 }
+
+.task-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-sm $spacing-md;
+  background-color: $white;
+  border: 1px solid $gray;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $gray-light;
+  }
+
+  .task-text {
+    flex: 1;
+    font-size: $font-size-base;
+    color: $gray-dark;
+    margin-right: $spacing-md;
+    word-break: break-word;
+  }
+
+  .task-del-btn {
+    background-color: transparent;
+    color: $gray-dark;
+    font-weight: bold;
+    border: none;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+}
