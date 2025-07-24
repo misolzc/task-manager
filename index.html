@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <script type="module" crossorigin src="/task-manager/assets/index-m0l0iTo3.js"></script>
+    <link rel="stylesheet" crossorigin href="/task-manager/assets/index-COKTLcH0.css">
+  </head>
+  <body>
+    <main class="app-container">
+      <header class="app-header">
+        <h1>Task Manager</h1>
+      </header>
+
+      <!-- Form for adding new task -->
+      <section class="task-form-section">
+        <form class="task-form" id="task-form" aria-label="Add new task">
+          <input
+            type="text"
+            name="task-input"
+            class="task-input"
+            id="task-input"
+            autocomplete="off"
+            required
+            placeholder="Add a new task..."
+            aria-required="true"
+            aria-describedby="task-input-desc"
+          />
+
+          <button type="submit" class="task-add-btn" aria-label="Add task">
+            Add
+          </button>
+
+          <p class="sr-only" id="task-input-desc">
+            Enter a task description and press Add or Enter
+          </p>
+        </form>
+      </section>
+
+      <!-- Task filters -->
+      <section class="task-filters-section" aria-label="Filter task">
+        <div class="task-filters" role="group" aria-label="Task filter option">
+          <button
+            type="button"
+            class="filter-btn active"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            All
+          </button>
+
+          <button
+            type="button"
+            class="filter-btn"
+            data-filter="active"
+            aria-pressed="false"
+          >
+            Active
+          </button>
+
+          <button
+            type="button"
+            class="filter-btn"
+            data-filter="completed"
+            aria-pressed="false"
+          >
+            Completed
+          </button>
+        </div>
+      </section>
+
+      <!-- List of tasks -->
+      <section
+        class="task-list-section"
+        aria-live="polite"
+        aria-label="List of tasks"
+      >
+        <ul class="task-list" id="task-list"></ul>
+      </section>
+    </main>
+  </body>
+</html>
