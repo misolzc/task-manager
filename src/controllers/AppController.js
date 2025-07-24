@@ -1,6 +1,7 @@
 import LocalStorage from "../services/LocalStorageService";
 import State from "../store/State";
 import TaskFormModel from "../models/TaskFormModel";
+import TaskListView from "../views/TaskListView";
 
 /**
  * Main controller for initializing and managing application components.
@@ -12,7 +13,8 @@ export default class AppController {
   constructor() {
     this.localStorage = new LocalStorage();
     this.state = new State(this.localStorage);
-    this.taskFormModel = new TaskFormModel(this.state);
+    this.taskListView = new TaskListView(this.state);
+    this.taskFormModel = new TaskFormModel(this.state, this.taskListView);
   }
 
   /**
@@ -20,6 +22,7 @@ export default class AppController {
    * @returns {void}
    */
   init() {
+    this.taskListView.renderTaskList(this.state.tasks);
     this.taskFormModel.addTask();
   }
 }

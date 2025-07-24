@@ -5,10 +5,11 @@ export default class TaskFormModel {
   /**
    * @param {State} state - Application state instance for managing tasks.
    */
-  constructor(state) {
+  constructor(state, taskListView) {
     this.taskInput = document.querySelector(".task-input");
     this.taskAddBtn = document.querySelector(".task-add-btn");
     this.state = state;
+    this.taskListView = taskListView;
   }
 
   /**
@@ -18,6 +19,8 @@ export default class TaskFormModel {
     this.taskAddBtn.addEventListener("click", (e) => {
       e.preventDefault();
       this.state.createTasks(this.taskInput.value);
+      this.taskInput.value = "";
+      this.taskListView.renderTaskList(this.state.tasks);
     });
   }
 }

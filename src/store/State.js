@@ -57,4 +57,8 @@ export default class State {
       return this.tasks.filter((task) => task.completed === true);
     return this.tasks;
   }
+
+  getTasks() {
+    return this.tasks;
+  }
 }
