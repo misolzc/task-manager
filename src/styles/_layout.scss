@@ -1,0 +1,16 @@
+@use "./variables" as *;
+
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: $spacing-lg;
+  background-color: $white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba($black, $alpha: 0.1);
+  margin-top: $spacing-lg;
+}
+
+.app-header h1 {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+}
