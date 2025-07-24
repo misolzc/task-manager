@@ -1,4 +1,5 @@
 import LocalStorage from "../services/LocalStorageService";
+import State from "../store/State";
 
 /**
  * Main controller class for the application.
@@ -10,6 +11,7 @@ export default class AppController {
    */
   constructor() {
     this.localStorage = new LocalStorage();
+    this.state = new State(this.localStorage);
   }
 
   /**
