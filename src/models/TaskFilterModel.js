@@ -1,10 +1,21 @@
+/**
+ * Manages task filtering via filter buttons in the UI.
+ */
 export default class TaskFilterModel {
+  /**
+   *
+   * @param {object} state
+   * @param {object} taskListView
+   */
   constructor(state, taskListView) {
     this.filterBtn = document.querySelectorAll(".filter-btn");
     this.state = state;
     this.taskListView = taskListView;
   }
 
+  /**
+   * Filters tasks by status and updates the task list view.
+   */
   handleFilterClick() {
     this.filterBtn.forEach((btn) => {
       btn.addEventListener("click", (e) => {

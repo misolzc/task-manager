@@ -3,7 +3,7 @@
  */
 export default class TaskFormModel {
   /**
-   * @param {State} state - Application state instance for managing tasks.
+   * @param {object} state - Application state instance for managing tasks.
    */
   constructor(state, taskListView) {
     this.taskInput = document.querySelector(".task-input");

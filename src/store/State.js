@@ -3,7 +3,7 @@
  */
 export default class State {
   /**
-   * @param {LocalStorage} localStorage - Instance to handle persistence.
+   * @param {object} localStorage - Instance to handle persistence.
    */
   constructor(localStorage) {
     this.localStorage = localStorage;
