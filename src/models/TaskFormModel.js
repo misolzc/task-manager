@@ -18,6 +18,10 @@ export default class TaskFormModel {
   addTask() {
     this.taskAddBtn.addEventListener("click", (e) => {
       e.preventDefault();
+      if (this.taskInput.value === "") {
+        alert("Please enter a task.");
+        return;
+      }
       this.state.createTasks(this.taskInput.value);
       this.taskInput.value = "";
       this.taskListView.renderTaskList(this.state.tasks);
